@@ -1,0 +1,26 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "  S",
+    " IS",
+    "IWS"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:diamond",
+      "data": 0
+    },
+    "S": {
+      "item": "minecraft:stick",
+      "data": 0
+    },
+    "W": {
+      "item": "minecraft:string",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "oredetector:diamond_detector",
+    "count": 1
+  }
+}

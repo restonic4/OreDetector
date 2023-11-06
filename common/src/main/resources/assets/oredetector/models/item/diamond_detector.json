@@ -23,6 +23,6 @@
     }
   },
   "textures": {
-    "layer0": "oredetector:item/iron_detector"
+    "layer0": "oredetector:item/diamond_detector"
   }
 }

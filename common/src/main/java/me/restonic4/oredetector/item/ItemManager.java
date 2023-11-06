@@ -1,8 +1,7 @@
 package me.restonic4.oredetector.item;
 
-import me.restonic4.oredetector.item.custom.GoldDetector;
-import me.restonic4.oredetector.item.custom.IronDetector;
-import me.restonic4.oredetector.item.custom.OreDetectorItem;
+import me.restonic4.oredetector.creative_tab.CreativeTabManager;
+import me.restonic4.oredetector.item.custom.*;
 import me.restonic4.restapi.item.ItemRegistry;
 import me.restonic4.restapi.util.CustomItemProperties;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -15,7 +14,7 @@ public class ItemManager {
             "iron_detector",
             () -> new IronDetector(
                     new CustomItemProperties()
-                            .tab(CreativeModeTabs.TOOLS_AND_UTILITIES)
+                            .tab(CreativeTabManager.mainTab)
                             .build()
             )
     );
@@ -25,7 +24,27 @@ public class ItemManager {
             "gold_detector",
             () -> new GoldDetector(
                     new CustomItemProperties()
-                            .tab(CreativeModeTabs.TOOLS_AND_UTILITIES)
+                            .tab(CreativeTabManager.mainTab)
+                            .build()
+            )
+    );
+
+    public static Object DIAMOND_DETECTOR = ItemRegistry.CreateCustom(
+            MOD_ID,
+            "diamond_detector",
+            () -> new DiamondDetector(
+                    new CustomItemProperties()
+                            .tab(CreativeTabManager.mainTab)
+                            .build()
+            )
+    );
+
+    public static Object NETHERITE_DETECTOR = ItemRegistry.CreateCustom(
+            MOD_ID,
+            "netherite_detector",
+            () -> new NetheriteDetector(
+                    new CustomItemProperties()
+                            .tab(CreativeTabManager.mainTab)
                             .build()
             )
     );

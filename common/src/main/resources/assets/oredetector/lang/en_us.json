@@ -1,6 +1,9 @@
 {
   "item.oredetector.iron_detector": "Iron detector",
   "item.oredetector.gold_detector": "Gold detector",
+  "item.oredetector.diamond_detector": "Diamond detector",
+  "item.oredetector.netherite_detector": "Netherite detector",
   "sounds.oredetector.not_found": "Ore detector beep",
-  "sounds.oredetector.found": "Ore detector beep"
+  "sounds.oredetector.found": "Ore detector beep",
+  "itemGroup.oredetector.ore_detector": "Ore detector"
 }
