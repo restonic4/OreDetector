@@ -1,0 +1,6 @@
+{
+  "item.oredetector.iron_detector": "Iron detector",
+  "item.oredetector.gold_detector": "Gold detector",
+  "sounds.oredetector.not_found": "Ore detector beep",
+  "sounds.oredetector.found": "Ore detector beep"
+}
