@@ -1,6 +1,7 @@
 package me.restonic4.oredetector.item.custom;
 
-import dev.architectury.registry.registries.DeferredSupplier;
+//import dev.architectury.registry.registries.DeferredSupplier;
+import dev.architectury.registry.registries.RegistrySupplier;
 import me.restonic4.oredetector.sound.SoundManager;
 import me.restonic4.restapi.RestApi;
 import me.restonic4.restapi.sound.SoundRegistry;
@@ -79,7 +80,7 @@ public class OreDetectorItem extends Item {
     private void oreFound(Player player, Level level) {
         RestApi.Log("Ore found", MOD_ID);
 
-        SoundEvent sound = ((DeferredSupplier<SoundEvent>)  SoundManager.found).get();
+        SoundEvent sound = ((RegistrySupplier<SoundEvent>)  SoundManager.found).get();
 
         level.playSound(null, player.getOnPos(), sound, SoundSource.PLAYERS);
     }
@@ -87,7 +88,7 @@ public class OreDetectorItem extends Item {
     private void oreNotFound(Player player, Level level) {
         RestApi.Log("Ore not found found", MOD_ID);
 
-        SoundEvent sound = ((DeferredSupplier<SoundEvent>)  SoundManager.notFound).get();
+        SoundEvent sound = ((RegistrySupplier<SoundEvent>)  SoundManager.notFound).get();
 
         level.playSound(null, player.getOnPos(), sound, SoundSource.PLAYERS);
     }
