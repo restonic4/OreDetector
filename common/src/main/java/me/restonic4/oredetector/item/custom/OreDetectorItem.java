@@ -1,13 +1,7 @@
 package me.restonic4.oredetector.item.custom;
 
-//import dev.architectury.registry.registries.DeferredSupplier;
-import dev.architectury.registry.registries.RegistrySupplier;
 import me.restonic4.oredetector.sound.SoundManager;
-import me.restonic4.restapi.RestApi;
-import me.restonic4.restapi.sound.SoundRegistry;
-import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -15,11 +9,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 import static me.restonic4.oredetector.OreDetector.MOD_ID;
+import static me.restonic4.oredetector.OreDetector.LOGGER;
 
 public class OreDetectorItem extends Item {
     public OreDetectorItem(Properties properties) {
@@ -78,17 +71,17 @@ public class OreDetectorItem extends Item {
     }
 
     private void oreFound(Player player, Level level) {
-        RestApi.Log("Ore found", MOD_ID);
+        LOGGER.log("Ore found");
 
-        SoundEvent sound = ((RegistrySupplier<SoundEvent>)  SoundManager.found).get();
+        SoundEvent sound = SoundManager.found.get().get();
 
         level.playSound(null, player.getOnPos(), sound, SoundSource.PLAYERS);
     }
 
     private void oreNotFound(Player player, Level level) {
-        RestApi.Log("Ore not found found", MOD_ID);
+        LOGGER.log("Ore not found");
 
-        SoundEvent sound = ((RegistrySupplier<SoundEvent>)  SoundManager.notFound).get();
+        SoundEvent sound = SoundManager.notFound.get().get();
 
         level.playSound(null, player.getOnPos(), sound, SoundSource.PLAYERS);
     }

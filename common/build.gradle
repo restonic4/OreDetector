@@ -9,7 +9,7 @@ dependencies {
 }
 
 architectury {
-    common("fabric", "forge", "quilt")
+    common((rootProject.enabled_platforms.tokenize(',') as List<String>))
 }
 
 publishing {
